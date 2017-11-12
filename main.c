@@ -22,17 +22,18 @@ main(){
 	system("cls");
 	
 	deci = menu();	
+}
 	
 int menu(){
 	
 	int controle = true, deci;
 	do{
 		system ("cls ");
-		printf("O QUE DESEJA FAZER ?\n1 - ENTRAR\n2 - SAIR\nDECIS√O:");
+		printf("O QUE DESEJA FAZER ?\n1 - ENTRAR\n2 - SAIR\nDECIS√ÉO:");
 		scanf("%d", &deci);
 		
 		if ((deci != 1)||(deci != 2)){
-			printf("OP«√O INV¡LIDA, POR FAVOR, ESCOLHA UMA OP«√O V¡LIDA");
+			printf("OP√á√ÉO INV√ÅLIDA, POR FAVOR, ESCOLHA UMA OP√á√ÉO V√ÅLIDA");
 			controle = false;
 		}
 	}while (controle = false);
@@ -52,7 +53,7 @@ FILE* abrir(char modo, char caminho[30]){
 		arquivo =  fopen (caminho, "a");
 	}
 	if (arquivo == NULL){
-		printf("N√O FOI POSSIVEL ABRIR O ARQUIVO");
+		printf("N√ÉO FOI POSSIVEL ABRIR O ARQUIVO");
 	}
 	return arquivo;	
 }
