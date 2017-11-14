@@ -8,18 +8,18 @@ int menu();
 void pagamento (char modo);
 FILE* abrir(char modo, char caminho[30]);
 void fecha (FILE *arquivo);
+struct cadastro {
+	int num;
+	int ano;
+	char carro[20];
+	char marca[50];
+	char letra[5];
+};
 
 main(){
 	
 	setlocale(LC_ALL, "portuguese");
-	int i=0;
-	struct cadastro{
-		int numPlaca=0;
-		int ano=0;
-		char carro[20];
-		char marca[50];
-		char placaLetra[5];
-	};
+	int i;
 	char modo;
 	int deci;
 	FILE *arquivo;
@@ -31,26 +31,25 @@ main(){
 	deci = menu();	
 
 	if(deci==1){
-		struct cadastro entrada;
-		
-			scanf("%d",&entrada.num_placa);
-			scanf("%s",entrada.placa_letra);
-			scanf("%d",&entrada.ano);
-			scanf("%s",entrada.carro);
-			scanf("%s",entrada.marca);
-		
-		
-			printf("%d",entrada.num_placa);
-			printf("%s",entrada.placa_letra);
-			printf("%d",entrada.ano);
-			printf("%s",entrada.carro);
-			printf("%s",entrada.marca);	
-		
-
-	
-	
+		struct cadastro entrada[1];
+		for(i=0;i<1;i++){
+			printf("Informe os números contidos na placa: "); scanf("%d",&entrada[i].num);printf("\n");
+			printf("Informe as letras contidos na placa: "); scanf("%s",entrada[i].letra);printf("\n");
+			printf("Informe o ano do carro: ");scanf("%d",&entrada[i].ano);printf("\n");
+			printf("Informe o nome do carro: ");scanf("%s",entrada[i].carro);printf("\n");
+			printf("Informe a marca do carro: ");scanf("%s",entrada[i].marca);printf("\n");
+		}
+		for(i=0;i<1;i++){
+			printf("----------------------------------------------------\n\n\n");
+			printf("Números da placa: %d",entrada[i].num);printf("\n");
+			printf("Letras da placa: %s",entrada[i].letra);printf("\n");
+			printf("Ano do carro: %d",entrada[i].ano);printf("\n");
+			printf("Nome do carro: %s",entrada[i].carro);printf("\n");
+			printf("Marca do carro: %s",entrada[i].marca);	printf("\n\n\n");
+			printf("----------------------------------------------------\n\n\n");
+		}	
 }
-	
+}	
 int menu(){
 	
 	int controle = true, deci=0;
