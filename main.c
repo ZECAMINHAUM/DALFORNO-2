@@ -12,12 +12,13 @@ void fecha (FILE *arquivo);
 main(){
 	
 	setlocale(LC_ALL, "portuguese");
-	
+	int i=0;
 	struct cadastro{
-		int num_placa=0,ano=0;
+		int numPlaca=0;
+		int ano=0;
 		char carro[20];
 		char marca[50];
-		char placa_letra[5];
+		char placaLetra[5];
 	};
 	char modo;
 	int deci;
@@ -30,23 +31,23 @@ main(){
 	deci = menu();	
 
 	if(deci==1){
-		struct cadastro entrada[2];
-		for(int i=0;i<2;i++){
-			scanf("%d",&entrada[i].num_placa);
-			scanf("%s",entrada[i].placa_letra);
-			scanf("%d",&entrada[i].ano);
-			scanf("%s",entrada[i].carro);
-			scanf("%s",entrada[i].marca);
-		}
-		for (int i = 0; i < 2; i++){
-			printf("%d",entrada[i].num_placa);
-			printf("%s",entrada[i].placa_letra);
-			printf("%d",entrada[i].ano);
-			printf("%s",entrada[i].carro);
-			printf("%s",entrada[i].marca);	
-		}
+		struct cadastro entrada;
+		
+			scanf("%d",&entrada.num_placa);
+			scanf("%s",entrada.placa_letra);
+			scanf("%d",&entrada.ano);
+			scanf("%s",entrada.carro);
+			scanf("%s",entrada.marca);
+		
+		
+			printf("%d",entrada.num_placa);
+			printf("%s",entrada.placa_letra);
+			printf("%d",entrada.ano);
+			printf("%s",entrada.carro);
+			printf("%s",entrada.marca);	
+		
 
-	}
+	
 	
 }
 	
@@ -66,7 +67,7 @@ int menu(){
 			printf("OPÇÃO INVÁLIDA, POR FAVOR INFORME UMA OPÇÃO VÁLIDA!\n");
 			controle = false;
 		}
-	}while (controle = false);
+	}while (controle==false);
 	return deci;	
 }
 FILE* abrir(char modo, char caminho[30]){
